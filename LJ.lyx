@@ -1,0 +1,14048 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{titling}
+\usepackage{minted}
+\usepackage{listings}
+\end_preamble
+\options UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package none
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "libertine-mono" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "学习J"
+\pdf_author "科温"
+\pdf_subject "J"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset CommandInset href
+LatexCommand href
+name "学习J"
+target "https://www.jsoftware.com/help/learning/contents.htm"
+literal "false"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+J程序设计语言入门
+\end_layout
+
+\begin_layout Author
+作者：Roger Stokes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ 翻译：科温（
+\begin_inset CommandInset href
+LatexCommand href
+name "corwin.dong@hotmail.com"
+target "corwin.dong@hotmail.com"
+type "mailto:"
+literal "true"
+
+\end_inset
+
+）
+\end_layout
+
+\begin_layout Date
+原书：2015年6月15日修订 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ 翻译：2020年10月0.2版
+\end_layout
+
+\begin_layout Part*
+关于本书
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{part}{关于本书}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+本书旨在帮助读者学习J程序设计语言。
+\end_layout
+
+\begin_layout Standard
+本书期望能够适合不同水平的读者，从新手到老手。对于新手，每一步都有例子可供参考。例子经过精心考量，比较简单，每次只引入一个概念。而老手将会沉浸于J符号那无与伦比
+的简洁和威力。
+\end_layout
+
+\begin_layout Standard
+本书的范围是J语言核心，该核心定义于
+\begin_inset CommandInset href
+LatexCommand href
+name "J词典"
+target "http://www.jsoftware.com/help/dictionary/contents.htm"
+literal "false"
+
+\end_inset
+
+。本书对J语言核心的讲解比较完整，涵盖了J词典的大部分。
+\end_layout
+
+\begin_layout Standard
+本书没有讨论诸如图表、绘图、GUI、以及数据库这些主题（这些主题参见
+\begin_inset CommandInset href
+LatexCommand href
+name "J用户手册"
+target "http://www.jsoftware.com/help/user/contents.htm"
+literal "false"
+
+\end_inset
+
+），也没有探究
+\begin_inset CommandInset href
+LatexCommand href
+name "J应用库"
+target "http://code.jsoftware.com/wiki/JAL"
+literal "false"
+
+\end_inset
+
+。在次明确一下，本书不教授编程基础，不研究算法，不用J作为工具探讨数学等其他主题，也不是完整的参考手册。
+\end_layout
+
+\begin_layout Standard
+本书结构如下：第一部分是基础性介绍，涉及多个主题。第一部分结束后，读者应该对J语言有个概览和大致体验。第一部分介绍的主题将在后续章节中做进一步的展开和详述。
+\end_layout
+
+\begin_layout Standard
+所有示例可运行于J701以及后续版本。
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+开始
+\end_layout
+
+\begin_layout Chapter
+基础
+\end_layout
+
+\begin_layout Section
+交互式使用
+\end_layout
+
+\begin_layout Standard
+打开J解释器，输入一行表达式，例如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2+2}
+\end_layout
+
+\end_inset
+
+。然后按回车，表达式将被求值，结果显示在下一行。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   2+2
+\end_layout
+
+\begin_layout Plain Layout
+
+4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+然后解释器提示等待下一行输入。光标缩进三个空格的距离，表示解释器等待输入。因此，在本书中，缩进的行表示用户输入，下一行（没有缩进）表示相应的输出。
+\end_layout
+
+\begin_layout Section
+算术
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*}
+\end_layout
+
+\end_inset
+
+（星号）代表乘法。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   2*3
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们再试一次，这次输入
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$2
+\backslash
+textvisiblespace*
+\backslash
+textvisiblespace3$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   2 * 3
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+结果和之前相同，这表明空格是可选的。空格能让表达式可读性更好一些。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{%}
+\end_layout
+
+\end_inset
+
+（百分号）代表除法
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   3 % 4
+\end_layout
+
+\begin_layout Plain Layout
+
+0.75
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{-}
+\end_layout
+
+\end_inset
+
+（减号）代表求负和减法。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   - 3
+\end_layout
+
+\begin_layout Plain Layout
+
+_3
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{^}
+\end_layout
+
+\end_inset
+
+（脱字号）代表乘方运算。例如，2的立方是8：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   2 ^ 3
+\end_layout
+
+\begin_layout Plain Layout
+
+8
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*:}
+\end_layout
+
+\end_inset
+
+（星号和冒号）代表平方运算。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   *: 4
+\end_layout
+
+\begin_layout Plain Layout
+
+16
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+一些术语：函数、参数、应用和值
+\end_layout
+
+\begin_layout Standard
+以表达式
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 * 3}为例
+\end_layout
+
+\end_inset
+
+，我们说乘法函数应用于它的参数。左参数是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+，右参数是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+也被称作参数的值。
+\end_layout
+
+\begin_layout Section
+列表
+\end_layout
+
+\begin_layout Standard
+有时我们期望能够将同一个计算应用到不同的数字上，这时我们可以使用列表。一个数字列表可以写作：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3 4}
+\end_layout
+
+\end_inset
+
+，每个数字之间用空格分隔。想要计算列表中每个数字的平方，我们可以这么操作：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   *: 1 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+1 4 9 16
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+你会发现平方函数（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*:}
+\end_layout
+
+\end_inset
+
+）分别作用于列表中的每个数字。如果给一个函数（比如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+）提供两个列表做参数，函数将分别作用于相应的元素对：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 2 3 + 10 20 30
+\end_layout
+
+\begin_layout Plain Layout
+
+11 22 33
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果一个参数是列表，另一个参数是单个数字，那么这个数字将按需重复多次：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 + 10 20 30
+\end_layout
+
+\begin_layout Plain Layout
+
+11 21 31
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这个特性有时很有用，当我们遇到一个新函数时，可以探究参数列表的模式如何产生结果列表的模式。
+\end_layout
+
+\begin_layout Standard
+例如，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{7}
+\end_layout
+
+\end_inset
+
+除以
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+，商
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+余
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+。J用来计算余数的内置函数是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|}
+\end_layout
+
+\end_inset
+
+（竖杠），称为“求余”函数。参数和结果的模式如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   2 | 0 1 2 3 4 5 6 7
+\end_layout
+
+\begin_layout Plain Layout
+
+0 1 0 1 0 1 0 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   3 | 0 1 2 3 4 5 6 7
+\end_layout
+
+\begin_layout Plain Layout
+
+0 1 2 0 1 2 0 1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+求余函数类似于求模函数，区别在于我们写作（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 | 7}
+\end_layout
+
+\end_inset
+
+）而不是（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{7 mod 2}
+\end_layout
+
+\end_inset
+
+）。
+\end_layout
+
+\begin_layout Section
+括号
+\end_layout
+
+\begin_layout Standard
+一个表达式可以包含括号，括号可以用来分隔计算：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   (2+1)*(2+2)
+\end_layout
+
+\begin_layout Plain Layout
+
+12
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当然，括号并不总是必须的。但是以表达式
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3*2+1}
+\end_layout
+
+\end_inset
+
+为例，它表示
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(3*2)+1}
+\end_layout
+
+\end_inset
+
+（结果是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{7}
+\end_layout
+
+\end_inset
+
+）呢，还是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3*(2+1)}
+\end_layout
+
+\end_inset
+
+（结果是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{9}
+\end_layout
+
+\end_inset
+
+）呢？
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   3 * 2 + 1
+\end_layout
+
+\begin_layout Plain Layout
+
+9
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们在学校中学习到的是，乘法的优先级高于加法。确定优先级有助于减少括号的使用。
+\end_layout
+
+\begin_layout Standard
+但是在J中，没有类似的优先级。我们可以在需要的时候使用括号。但是，J也有一个规则可以减少括号的使用，如同上面那个例子（没有括号）。这个规则就是：在没有括号的情况
+下，函数的右边都是该函数的右参数。因此对于
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3*2+1}
+\end_layout
+
+\end_inset
+
+，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*}
+\end_layout
+
+\end_inset
+
+的右参数是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2+1}
+\end_layout
+
+\end_inset
+
+。下面是另一个例子：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 + 3 % 4
+\end_layout
+
+\begin_layout Plain Layout
+
+1.75
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+可以看到
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{%}
+\end_layout
+
+\end_inset
+
+函数比
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+函数先一步计算，也就是说，最右边的函数先计算。
+\end_layout
+
+\begin_layout Standard
+以上的规则也可以总结为“最右优先”。这仅仅是一种便利：你可以忽略该规则而使用括号。该规则的好处在于：在J语言中，有许多（大概100多）函数和数值运算相关，想尝试
+确定它们的优先级是一件吃力不讨好的事情。
+\end_layout
+
+\begin_layout Standard
+在本书中，基于“最右优先”的规则，我有时会在不必要的情况下使用括号。这么做的目的是为了突出表达式的结构，给部分表达式加上括号可以增加其可读性。
+\end_layout
+
+\begin_layout Section
+变量和赋值
+\end_layout
+
+\begin_layout Standard
+汉语表达——让
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+代表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{10}
+\end_layout
+
+\end_inset
+
+——在J中可以写作：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mint{j}{
+\end_layout
+
+\begin_layout Plain Layout
+
+   x =: 100
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+该表达式称为赋值表达式，将值
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{100}
+\end_layout
+
+\end_inset
+
+赋给名字
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+。也可以说，我们创建了变量
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+，使之拥有值
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{100}
+\end_layout
+
+\end_inset
+
+。当一行输入只包含赋值表达式时，J不会反馈任何输出。
+\end_layout
+
+\begin_layout Standard
+赋值之后，名字就可以使用了，在任何需要该值的地方都可以使用改名字。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x - 1
+\end_layout
+
+\begin_layout Plain Layout
+
+99
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+赋值表达式中的值可以通过其他表达式计算出来：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mint{j}{   y =: x - 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+变量
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+被用来记录
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x-1}
+\end_layout
+
+\end_inset
+
+的结果。如果想要查看变量的值，直接输入变量的名字即可，这也是一个表达式，特别简单的那种：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   y
+\end_layout
+
+\begin_layout Plain Layout
+
+99
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+同一个变量可以被多次赋值，新值将会覆盖之前的值：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   z =: 6
+\end_layout
+
+\begin_layout Plain Layout
+
+   z =: 8
+\end_layout
+
+\begin_layout Plain Layout
+
+   z
+\end_layout
+
+\begin_layout Plain Layout
+
+8
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+变量的值也可以被用来为该变量计算新的值：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   z =: z + 1
+\end_layout
+
+\begin_layout Plain Layout
+
+   z
+\end_layout
+
+\begin_layout Plain Layout
+
+9
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+之前说过只输入赋值表达式是不显示任何输出的。然而，赋值本身也是一个表达式，它本身是有值的，可以被用于其他表达式中：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 + (u =: 99)
+\end_layout
+
+\begin_layout Plain Layout
+
+100
+\end_layout
+
+\begin_layout Plain Layout
+
+   u
+\end_layout
+
+\begin_layout Plain Layout
+
+99
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+下面是一些赋值的例子，用来展示我们可以选择什么样的变量名字：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x                       =: 0
+\end_layout
+
+\begin_layout Plain Layout
+
+   X                       =: 1
+\end_layout
+
+\begin_layout Plain Layout
+
+   K9                      =: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+   finaltotal              =: 3
+\end_layout
+
+\begin_layout Plain Layout
+
+   FinalTotal              =: 4
+\end_layout
+
+\begin_layout Plain Layout
+
+   average_annual_rainfall =: 5
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+名字必须以字母开头，只能包括字母（大写或者小写）、数字（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0-9}
+\end_layout
+
+\end_inset
+
+）或者下划线（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{_}
+\end_layout
+
+\end_inset
+
+）。J区分大小写字母，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{X}
+\end_layout
+
+\end_inset
+
+是不同的变量名字。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x
+\end_layout
+
+\begin_layout Plain Layout
+
+0
+\end_layout
+
+\begin_layout Plain Layout
+
+   X
+\end_layout
+
+\begin_layout Plain Layout
+
+1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+术语：单子和对子
+\end_layout
+
+\begin_layout Standard
+只在右侧接受一个参数的函数成为一元函数，简称为单子，例如平方函数（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*:}
+\end_layout
+
+\end_inset
+
+）。在左右两侧各接受一个参数的函数成为二元函数，或者简称为对子，例如加法函数（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+）。
+\end_layout
+
+\begin_layout Standard
+减法和求负提供了示例来说明同一个符号（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{-}
+\end_layout
+
+\end_inset
+
+）可以代表两个函数。换句话说，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{-}
+\end_layout
+
+\end_inset
+
+具有一元模式（求负）和二元模式（减法）。几乎所有J语言内置函数都具有一元模式和二元模式。再举一个例子，除法函数（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{%}
+\end_layout
+
+\end_inset
+
+），现在可以说，除法是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{%}
+\end_layout
+
+\end_inset
+
+的二元模式。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{%}
+\end_layout
+
+\end_inset
+
+的一元模式是求倒数。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   % 4
+\end_layout
+
+\begin_layout Plain Layout
+
+0.25
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+更多内置函数
+\end_layout
+
+\begin_layout Standard
+本节通过探究一些J语言的内置函数来展示一点J语言编程的特色。
+\end_layout
+
+\begin_layout Standard
+考虑汉语表达式：把2、3、4加起来，或者2、3、4求和，结果显然是9。该汉语表达式在J语言中是：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   + / 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+9
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+把J语言和汉语进行比较，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+代表“加”，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+代表“起来”。
+\end_layout
+
+\begin_layout Standard
+类似的，表达式：把2、3、4乘起来，结果应该是24，在J语言中写作:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   * / 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+24
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们发现
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/ 2 3 4}
+\end_layout
+
+\end_inset
+
+表示
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2+3+4}
+\end_layout
+
+\end_inset
+
+，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*/ 2 3 4}
+\end_layout
+
+\end_inset
+
+表示
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2*3*4}
+\end_layout
+
+\end_inset
+
+。符号
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+叫做“插入”，因为它把其左边的任意函数插入到右边列表的元素之间。更一般的规则是，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{F}
+\end_layout
+
+\end_inset
+
+代表一个二元函数，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{L}
+\end_layout
+
+\end_inset
+
+代表一列数值
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{a, b, c, ..., y, z}
+\end_layout
+
+\end_inset
+
+，对此我们有：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mint{j}{F / L     表示    a F b F ....
+ F y F z}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们继续看别的函数，看看以下三个命题：
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \qquad{}
+\end_inset
+
+2大于1（显然为真）
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \qquad{}
+\end_inset
+
+2等于1（假）
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \qquad{}
+\end_inset
+
+2小于1（假）
+\end_layout
+
+\begin_layout Standard
+在J语言中，“真”用数字
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+表示，“假”用数字
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+表示。上面三个命题在J中表示为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   2 > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   2 = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   2 < 1
+\end_layout
+
+\begin_layout Plain Layout
+
+0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+是一列数字，例如：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mint{j}{x =: 5 4 1 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们想知道，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+中哪些数字比2大？
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+1 1 0 1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+显然，第一、二以及最后一个元素的比较结果为“真”。那是不是所有的数字都大于2？
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   * / x > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当然不是，因为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x > 2}
+\end_layout
+
+\end_inset
+
+的结果是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 0 1}
+\end_layout
+
+\end_inset
+
+。乘法运算中只要有0（“假‘），结果都不会是1。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+中有几个元素比2大？我们可以把
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x > 1}
+\end_layout
+
+\end_inset
+
+的结果加起来：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   + / x > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+3
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+中有几个元素？我们可以把
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x=x}
+\end_layout
+
+\end_inset
+
+的结果加起来：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x
+\end_layout
+
+\begin_layout Plain Layout
+
+5 4 1 9
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   x = x
+\end_layout
+
+\begin_layout Plain Layout
+
+1 1 1 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   +/ x = x
+\end_layout
+
+\begin_layout Plain Layout
+
+4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+不过不用这么麻烦，J语言有一个内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+（称为“合计’）用来求出列表的长度：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   # x
+\end_layout
+
+\begin_layout Plain Layout
+
+4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+并排显示
+\end_layout
+
+\begin_layout Standard
+当我们输入J表达式时，表达式和结果依次显示在屏幕上。再拿上面那几行输入做一个例子：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x
+\end_layout
+
+\begin_layout Plain Layout
+
+5 4 1 9
+\end_layout
+
+\begin_layout Plain Layout
+
+   x = x
+\end_layout
+
+\begin_layout Plain Layout
+
+1 1 1 1
+\end_layout
+
+\begin_layout Plain Layout
+
+   +/ x = x
+\end_layout
+
+\begin_layout Plain Layout
+
+4
+\end_layout
+
+\begin_layout Plain Layout
+
+   # x
+\end_layout
+
+\begin_layout Plain Layout
+
+4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+有时我会展示一些输出，不用纵向一行行这种形式，而是横向并排形式，如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x = x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/ x = x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 4 1 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+并排显示仅仅是本书的一种图表，或者说展示方式，不是J系统的特性。在并排显示中，上面一行是输入，从左到右表示输入的顺序。下面一行是输入对应的输出。
+\end_layout
+
+\begin_layout Standard
+当你输入一个赋值表达式（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x=:something}
+\end_layout
+
+\end_inset
+
+）时，J系统并不会有什么输出。但是赋值表达式也是一个表达式，表达式都有值，显示其值比较方便理解。因此，在并排显示中，我们会显示赋值表达式的值：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x =: 1 + 2 3 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x = x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/ x = x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 4 5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+好了，让我们回到内置函数上。假设有一个列表，依次看着每个元素，说：“选，选，不选，选，不选”。在J中，该选择表示为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 0 1 0}
+\end_layout
+
+\end_inset
+
+。这种只包含0和1的列表称为位串（或者位列表、位向量）。J中有一个二元函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+，接受位串作为左参数，来选择其右参数中的元素。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y =: 6 7 8 9 10}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 0 1 0 # y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6 7 8 9 10}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6 7 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们可以从
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+中选取满足某条件的元素，比如说：那些大于
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{7}
+\end_layout
+
+\end_inset
+
+的元素
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y > 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(y > 7) # y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6 7 8 9 10}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 0 1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{8 9 10}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+注释
+\end_layout
+
+\begin_layout Standard
+在一行J程序中，符号
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{NB.}
+\end_layout
+
+\end_inset
+
+（大写N、B以及点号）引入注释。任何
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{NB.}
+\end_layout
+
+\end_inset
+
+之后直到行末的内容都不会被运行。例如：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   NB.
+ this is a whole line of annotation
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   6 + 6   NB.
+ ought to produce 12
+\end_layout
+
+\begin_layout Plain Layout
+
+12
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+内置函数命名规范
+\end_layout
+
+\begin_layout Standard
+每个J语言内置函数都有一个非正式名字和一个正式名字。例如，正式名字为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+的函数的非正式名字是“加”。更进一步，函数有一元和二元两种模式，所以正式名字
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{-}
+\end_layout
+
+\end_inset
+
+对应的非正式名字分别是“求负”和“减”。
+\end_layout
+
+\begin_layout Standard
+非正式名字是函数的简短描述，往往只有一个词。J语言并不试别非正式名字，也就是说，J中的表达式必须使用正式名字。在本书中，非正式名字用引号括起来，例如“减”。
+\end_layout
+
+\begin_layout Standard
+在J中，几乎所有的内置函数的正式名字都是一个或者两个字符。例如：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*:}
+\end_layout
+
+\end_inset
+
+函数。第二个字符往往是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{:}
+\end_layout
+
+\end_inset
+
+（冒号）或者
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{.}
+\end_layout
+
+\end_inset
+
+（点号）。
+\end_layout
+
+\begin_layout Standard
+二元
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>}
+\end_layout
+
+\end_inset
+
+我们已经见过了，表示“大于”。
+\end_layout
+
+\begin_layout Standard
+一元
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>}
+\end_layout
+
+\end_inset
+
+我们后面再说。
+\end_layout
+
+\begin_layout Standard
+一元
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>.}
+\end_layout
+
+\end_inset
+
+对它的参数进行向上取整，依次叫做“求上限”。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   >.
+ _1.7 1 1.7
+\end_layout
+
+\begin_layout Plain Layout
+
+_1 1 2
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+二元
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>.}
+\end_layout
+
+\end_inset
+
+选择两个参数中较大的：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   3 >.
+ 1 3 5
+\end_layout
+
+\begin_layout Plain Layout
+
+3 3 5
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们可以通过把
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>.}
+\end_layout
+
+\end_inset
+
+函数插入（使用
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+）列表来获取其的最大值。例如，列表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 6 5}
+\end_layout
+
+\end_inset
+
+的最大值可以通过
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(>.
+ / 1 6 5)}
+\end_layout
+
+\end_inset
+
+来获取。下面对这个运算过程一步一步分析，注释中说明了如何从上一步的到这一步。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   >.
+ / 1 6 5
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 >.
+ 6 >.
+ 5    NB.
+ 应用/
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 >.
+ (6 >.
+ 5)  NB.
+ 最右优先法则
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 >.
+ (6)       NB.
+ 应用>.
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+   1 >.
+ 6         NB.
+ 去除括号
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+   6              NB.
+ 应用>.
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+一元
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>:}
+\end_layout
+
+\end_inset
+
+非正式名字叫做“递增”，给它参数加1：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   >: _2 3 5 6.3
+\end_layout
+
+\begin_layout Plain Layout
+
+_1 4 6 7.3
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+二元
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>:}
+\end_layout
+
+\end_inset
+
+表示“大于等于”：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   3 >: 1 3 5
+\end_layout
+
+\begin_layout Plain Layout
+
+1 1 0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+第1章到此结束。
+\end_layout
+
+\begin_layout Chapter
+列表和表格
+\end_layout
+
+\begin_layout Standard
+计算需要数据。目前为止我们只接触了单个数值和数值列表。我们可以有其他形式的数据，比如表格。列表和表格统称为“阵列”。
+\end_layout
+
+\begin_layout Section
+表格
+\end_layout
+
+\begin_layout Standard
+一个2行3列的表格可以通过
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$}
+\end_layout
+
+\end_inset
+
+函数来构造：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   table =: 2 4 $ 5 6 7  8 9 10
+\end_layout
+
+\begin_layout Plain Layout
+
+   table
+\end_layout
+
+\begin_layout Plain Layout
+
+5 6  7
+\end_layout
+
+\begin_layout Plain Layout
+
+8 9 10
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+表达式（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x $ y}
+\end_layout
+
+\end_inset
+
+）构建一个表格。列表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+给出了表格的维度（先是行数，然后是列数）。表格的元素从列表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+中获取。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+中的元素依次按顺序使用，先用来填充第一行，然后是第二行\SpecialChar ldots
+。列表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+必须包含至少一个元素。如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+中的元素不够填充整个表格，那么从头开始再次使用
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="3cm">
+<column alignment="left" valignment="middle" width="1.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 4 $ 5 6 7 8 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 2 $ 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6 7 8}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{9 5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$}
+\end_layout
+
+\end_inset
+
+函数提供了一种构造表格的方式，更多的方式请参考
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch05}{第五章}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+和之前的列表一样，函数也可以应用于整个整个表格：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="1.5cm">
+<column alignment="left" valignment="middle" width="2cm">
+<column alignment="left" valignment="middle" width="3cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{10 * table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{table + table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6  7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{8 9 10}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{50 60  70}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{80 90 100}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{10 12 14}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{16 18 20}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+也可以一个参数是列表，一个参数是表格：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="2cm">
+<column alignment="left" valignment="middle" width="2.2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1 * table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6  7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{8 9 10}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 0  0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{8 9 10}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+上面这个例子中，显然地，列表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1}
+\end_layout
+
+\end_inset
+
+的元素自动和表格的行进行匹配。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+和第一行匹配，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+和第二行匹配。还有许多种参数匹配模式，具体请参考
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch07}{第七章}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Section
+阵列
+\end_layout
+
+\begin_layout Standard
+可以说，表格有两个维度（行和列）。同样的，列表只有一个维度。
+\end_layout
+
+\begin_layout Standard
+我们可以构造类似表格，但具有不止两个维度的数据。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$}
+\end_layout
+
+\end_inset
+
+函数的左参数可以是有着任意维度数据的列表。这种有维度的数据统称为“阵列”。下面是一些一维、二维和三维阵列的例子：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="3cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 $ 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 3 $ 5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 2 3 $ 5 6 7 8}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{8 5 6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{ }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{7 8 5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6 7 8}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们说上面这个三维阵列有着2面，2行和2列，两个面挨着显示，用一个空行分隔。
+\end_layout
+
+\begin_layout Standard
+回忆一下，一元函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+计算列表的长度。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="1.5cm">
+<column alignment="left" valignment="middle" width="1.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# 6 7 8}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+而一元函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$}
+\end_layout
+
+\end_inset
+
+计算其参数的维度列表：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{L =: 5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T =: 2 3 $ 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ T}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{ 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+因此，如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+是一个阵列，那么表达式（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ x}
+\end_layout
+
+\end_inset
+
+）将计算
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+维度列表的长度，也就是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+的维数：列表的维数是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+、表格的维数是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+等等。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$  L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ T}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ T}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+是一个单独的数字，那么表达式（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ x}
+\end_layout
+
+\end_inset
+
+）结果为0.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   # $ 17
+\end_layout
+
+\begin_layout Plain Layout
+
+0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们说表格有2个维度，列表有1个维度，但是单个数字没有维度，因为它的维度个数是零。维度为零的数据称为标量。之前说阵列是有维度的数据，标量也阵列，只不过它的维度是
+零。
+\end_layout
+
+\begin_layout Standard
+既然
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ 17}
+\end_layout
+
+\end_inset
+
+是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+，那么我们可以推断：因为标量没有维度，所以标量的维度列表（通过
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ 17}
+\end_layout
+
+\end_inset
+
+求出）一定是一个零长度列表或者说空列表。一个长度为2的列表可以通过类似
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 $ 99}
+\end_layout
+
+\end_inset
+
+这样的表达式获得，一个长度为0的列表则可以通过
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 $ 99}
+\end_layout
+
+\end_inset
+
+（实际是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 $}
+\end_layout
+
+\end_inset
+
+任意数字）得到。
+\end_layout
+
+\begin_layout Standard
+空列表的没有值，所以什么都不显示：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="1.2cm">
+<column alignment="left" valignment="middle" width="1.2cm">
+<column alignment="left" valignment="middle" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 $ 99}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 $ 99}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ 17}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{99 99}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+注意，标量（比如说
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{17}
+\end_layout
+
+\end_inset
+
+）和长度为一的列表（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 $ 17}
+\end_layout
+
+\end_inset
+
+）不是一回事，和一行一列的表格（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 $ 17}
+\end_layout
+
+\end_inset
+
+）也不同。标量维度为零，列表维度为一，表格维度为二，但是上面这几个在屏幕上的显示是一样的：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   S =: 17
+\end_layout
+
+\begin_layout Plain Layout
+
+   L =: 1 $ 17
+\end_layout
+
+\begin_layout Plain Layout
+
+   T =: 1 1 $ 17
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="0.5cm">
+<column alignment="left" valignment="middle" width="0.5cm">
+<column alignment="left" valignment="middle" width="0.5cm">
+<column alignment="left" valignment="middle" width="1cm">
+<column alignment="left" valignment="middle" width="1cm">
+<column alignment="left" valignment="middle" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{S}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ S}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ T}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{17}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{17}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{17}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+表格可以只有一列，但是依然是二维数据。下面的
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{t}
+\end_layout
+
+\end_inset
+
+就是个三行一列的表格：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="3.2cm">
+<column alignment="left" valignment="top" width="0.6cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{t =: 3 1 $ 5 6 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ t}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ t}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+术语：秩和形
+\end_layout
+
+\begin_layout Standard
+维数在J中被称为“秩”（Rank），所以单个数字被称为0-秩阵列，列表被称为1-秩阵列，以此类推。阵列的维度列表被称为阵列的“形”（Shape）。
+\end_layout
+
+\begin_layout Standard
+数字列表和表格对应于数学中的“向量”和“矩阵”。3维以上的阵列我们称之为“报告”（Report）。
+\end_layout
+
+\begin_layout Standard
+下表列出了描述阵列的术语和相关函数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
++--------+--------+-----------+------+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+|        | Example| Shape     | Rank |
+\end_layout
+
+\begin_layout Plain Layout
+
++--------+--------+-----------+------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|        | x      | $ x       | # $ x|
+\end_layout
+
+\begin_layout Plain Layout
+
++--------+--------+-----------+------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Scalar | 6      | empty list| 0    |
+\end_layout
+
+\begin_layout Plain Layout
+
++--------+--------+-----------+------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| List   | 4 5 6  | 3         | 1    |
+\end_layout
+
+\begin_layout Plain Layout
+
++--------+--------+-----------+------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Table  |0 1 2   | 2 3       | 2    |
+\end_layout
+
+\begin_layout Plain Layout
+
+|        |3 4 5   |           |      |
+\end_layout
+
+\begin_layout Plain Layout
+
++--------+--------+-----------+------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Report |0  1  2 | 2 2 3     | 3    |
+\end_layout
+
+\begin_layout Plain Layout
+
+|        |3  4  5 |           |      |
+\end_layout
+
+\begin_layout Plain Layout
+
+|        |        |           |      |
+\end_layout
+
+\begin_layout Plain Layout
+
+|        |6  7  8 |           |      |
+\end_layout
+
+\begin_layout Plain Layout
+
+|        |9 10 11 |           |      |
+\end_layout
+
+\begin_layout Plain Layout
+
++--------+--------+-----------+------+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+上面这张表其实使用一小段J程序生成的，是个货真价实的“表格”，就是我们一直讨论的那种。它的形是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6 4}
+\end_layout
+
+\end_inset
+
+。但是，它不是数值表格，因为它包含了词语、数值列表、数值表格等等。
+\end_layout
+
+\begin_layout Standard
+接下来我们看看非数值阵列。
+\end_layout
+
+\begin_layout Section
+字符阵列
+\end_layout
+
+\begin_layout Standard
+字符包括字母表中的字母、标点符号以及数字字母等等。我们可以像构造数值阵列一样构造字符阵列。字符列表输入时包含在一对儿单引号之中，但是显示时没有引号。例如：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   title =: 'My Ten Years in a Quandary'
+\end_layout
+
+\begin_layout Plain Layout
+
+   title
+\end_layout
+
+\begin_layout Plain Layout
+
+My Ten Years in a Quandary
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+字符列表也被称为字符串。单引号在字符串中可以用两个连续的单引号表示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   'What''s new?'
+\end_layout
+
+\begin_layout Plain Layout
+
+What's new?
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+两个连续的单引号表示空字符串，什么也不显示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0.5cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{''}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# ''}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+一些阵列函数
+\end_layout
+
+\begin_layout Standard
+到了这一步，学习一些操纵阵列的函数没坏处。J有着丰富的阵列操纵函数，这列我们只展示一小部分。
+\end_layout
+
+\begin_layout Subsection
+连接
+\end_layout
+
+\begin_layout Standard
+内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{,}
+\end_layout
+
+\end_inset
+
+（逗号）称为“添加”，它把数据连接在一起形成列表。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="2.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{a =: 'rear'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{b =: 'ranged'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{a,b}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{rear}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{ranged}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{rearranged}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+“添加”函数可以连接列表或者单个元素。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="1.5cm">
+<column alignment="left" valignment="top" width="1.5cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="2.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x =: 1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 , x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x , 0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 , 0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x , x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3 0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3 1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+“添加”函数也可以把两个表格首尾相连形成一个长表格：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T1 =: 2 3 $ 'catdog'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T2 =: 2 3 $ 'ratpig'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T1,T2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{cat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{dog}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{rat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{pig}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{cat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{dog}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{rat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{pig}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+关于“添加”函数更多的信息，请参考
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch05}{第五章}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Subsection
+元素数
+\end_layout
+
+\begin_layout Standard
+数值列表的元素就是其中的每个数字，表格的元素就是其中的每一行。三维阵列的元素就是其中的每个面。更一般地，我们说阵列的元素就是那些沿着其第一维顺序排列的的数据。阵
+列是其元素的列表。
+\end_layout
+
+\begin_layout Standard
+回忆一下内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+（“合计”），它计算列表的长度。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="0.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+其实
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+计算阵列的元素数，也就是说，它给出阵列的第一维：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ T1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# T1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{cat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{dog}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+显然
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# T1}
+\end_layout
+
+\end_inset
+
+是维度列表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ T1}
+\end_layout
+
+\end_inset
+
+的第一个元素。而标量没有维度，被当作就是一个元素：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   # 6
+\end_layout
+
+\begin_layout Plain Layout
+
+1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+再来看一下上面那个“添加”函数的例子。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T1 =: 2 3 $ 'catdog'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T2 =: 2 3 $ 'ratpig'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T1,T2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{cat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{dog}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{rat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{pig}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{cat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{dog}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{rat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{pig}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+现在我们可以说（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x , y}
+\end_layout
+
+\end_inset
+
+）是一个依次包含了
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+元素的列表。
+\end_layout
+
+\begin_layout Standard
+“元素”这个概念很有用。我们再看一个例子，回忆一下，动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/}
+\end_layout
+
+\end_inset
+
+把
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+插入到列表的元素之间。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/ 1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 + 2 + 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+现在我们可以说
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/}
+\end_layout
+
+\end_inset
+
+把
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+插入到阵列的元素之间。下面这个例子中，元素是表格的行：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="4.5cm">
+<column alignment="left" valignment="top" width="1cm">
+<column alignment="left" valignment="top" width="3cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T =: 3 2 $ 1 2 3 4 5 6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/ T}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 + 3 4 + 5 6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5 6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{9 12}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{9 12}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+选择
+\end_layout
+
+\begin_layout Standard
+接下来看看如何从列表中选取元素。列表中元素的位置从
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+开始：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0, 1, 2...}
+\end_layout
+
+\end_inset
+
+。第一个元素的位置是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+。我们使用{ 函数（左大括号，称为“来自”）来根据位置选取元素。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y =: 'abcd'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+ { 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+ {  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+ { 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{abcd}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{a}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{b}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{d}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+位置编号也被称为索引。{ 函数可以接受单个索引或者索引列表作为左参数。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+ { 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1}
+\end_layout
+
+\end_inset
+
+ { 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 0 1}
+\end_layout
+
+\end_inset
+
+ { 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{abcd}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{a}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{ab}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{dab}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.}
+\end_layout
+
+\end_inset
+
+（字母i和点号）具有这样的功能：表达式（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.
+ n}
+\end_layout
+
+\end_inset
+
+）生成从零开始
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{n}
+\end_layout
+
+\end_inset
+
+个连续的数字。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="3cm">
+<column alignment="left" valignment="top" width="2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.
+ 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.
+ }
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 + i.
+ 3}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1 2 3} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1 2 3 4 5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+是一个列表，那么表达式（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.
+ # x}
+\end_layout
+
+\end_inset
+
+）将生成列表
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+的所有索引。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="0.5cm">
+<column alignment="left" valignment="top" width="1.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x =: 'park'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.
+ # x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{park} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.}
+\end_layout
+
+\end_inset
+
+的参数是列表，那么将生成阵列：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   i.
+ 2 3
+\end_layout
+
+\begin_layout Plain Layout
+
+0 1 2
+\end_layout
+
+\begin_layout Plain Layout
+
+3 4 5
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+二元版本的
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{i.}
+\end_layout
+
+\end_inset
+
+，称为“求索引”。正如名字所示，表达式（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x i.
+ y}
+\end_layout
+
+\end_inset
+
+）将找出
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+在
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+中的索引。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   'park' i.
+ 'k'
+\end_layout
+
+\begin_layout Plain Layout
+
+3
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+找到的索引是元素第一次出现的那个位置。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   'parka' i.
+ 'a'
+\end_layout
+
+\begin_layout Plain Layout
+
+1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+不在
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+中，那么将返回
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+的最后一个索引加一。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   'park' i.
+ 'j'
+\end_layout
+
+\begin_layout Plain Layout
+
+4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+关于索引的更多内容，请参考
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch06}{第六章}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Subsection
+相等和匹配
+\end_layout
+
+\begin_layout Standard
+如果我们想知道两个阵列是否相等。可以使用内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{-:}
+\end_layout
+
+\end_inset
+
+（减号加冒号，称为“匹配”）。该函数测试它的两个参数是否具有相同的形，以及相应元素的值是否相等。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="3cm">
+<column alignment="left" valignment="top" width="2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{X = : 'abc'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{X -: X}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y =: 1 2 3 4}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{X -: Y}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{abc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+不管参数是什么，匹配函数的结果永远是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+或
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+（真或假）。
+\end_layout
+
+\begin_layout Standard
+请注意空字符串列表和空数值列表被当作匹配：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   '' -: 0 $ 0
+\end_layout
+
+\begin_layout Plain Layout
+
+1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+因为他们有着相同的形，而且相应的元素有着相同的值（因为压根没有元素）。
+\end_layout
+
+\begin_layout Standard
+还有一个函数，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{=}
+\end_layout
+
+\end_inset
+
+（称为“相等”），也测试其元素的相等性。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{=}
+\end_layout
+
+\end_inset
+
+对于它的两个参数，逐个元素进行比较，生成一个和其参数有着相同形的布尔值阵列。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y = Y }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y = 2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3 4} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 1 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 1 0 0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{=}
+\end_layout
+
+\end_inset
+
+函数的两个参数形必须相同（或者兼容，比如例子中的
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y = 2}
+\end_layout
+
+\end_inset
+
+）。否则就会报错。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="2cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y = 1 5 6 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Y = 1 5 6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3 4} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 0 0 1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{error}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+盒子阵列
+\end_layout
+
+\begin_layout Subsection
+链接
+\end_layout
+
+\begin_layout Standard
+内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{;}
+\end_layout
+
+\end_inset
+
+（分号，称为“链接”），将它的两个参数链接起来形成一个列表。参数可以是任何种类。例如我们把字符串和数字链接起来。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   A =: 'The answer is' ; 42
+\end_layout
+
+\begin_layout Plain Layout
+
+   A
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+--+
+\end_layout
+
+\begin_layout Plain Layout
+
+|The answer is|42|
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+--+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+链接的结果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{A}
+\end_layout
+
+\end_inset
+
+是一个长度为2的列表，列表的元素是盒子。第一个盒子中是字符串
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'The answer is'}
+\end_layout
+
+\end_inset
+
+，第二个盒子中是数字
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{42}
+\end_layout
+
+\end_inset
+
+。盒子在屏幕上展示为矩形轮廓包裹的值。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="4cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{A}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+ { 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{A}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|The answer is|42|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|The answer is|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+不管盒子里装的是什么，盒子本身是一个标量。因此盒子可以被放入常规阵列中，就像数字一样。所以
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{A}
+\end_layout
+
+\end_inset
+
+是一个标量列表。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="0.5cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="1cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{A}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ A}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{s =: 1}
+\end_layout
+
+\end_inset
+
+ { 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{A}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ s}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|The answer is|42|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|42|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+盒子阵列的主要作用之一是把不同种类的值组装在一起。例如，一个表示购买记录（日期、数量、描述）的变量可以用盒子列表来构建：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   P =: 18 12 1998 ; 1.99 ; 'baked beans'
+\end_layout
+
+\begin_layout Plain Layout
+
+   P
+\end_layout
+
+\begin_layout Plain Layout
+
++----------+----+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|18 12 1998|1.99|baked beans|
+\end_layout
+
+\begin_layout Plain Layout
+
++----------+----+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+注意“链接”和“添加”的不同。“链接”可以吧不同种类的值拼在一起，而“添加”函数只能拼接相同种类的值。也就是说，“添加”函数的两个参数必须是同一种类（都是数值阵
+列、都是字符串阵列，或者都是盒子阵列）。否则会报错。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="4cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'answer is' ; 42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'answer is' , 42}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|The answer is|42|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-------------+--+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{error}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当我们想把字符串和数字组合起来的时候，例如表示计算结果加上一些描述。我们可以把描述和数字“链接”起来，就像上面看到的。但是更自然的方式是把数字转换成字符串，然后
+把它“添加”到描述后面。
+\end_layout
+
+\begin_layout Standard
+可以通过内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{
+\begin_inset Quotes eld
+\end_inset
+
+:}
+\end_layout
+
+\end_inset
+
+（双引号加冒号，称为“格式化”）把数字转成字符串。下面这个例子中，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{n}
+\end_layout
+
+\end_inset
+
+是单个数字，而
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{s}
+\end_layout
+
+\end_inset
+
+——
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{n}
+\end_layout
+
+\end_inset
+
+格式化后的值——是一个长度为2的字符串。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="1.5cm">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="0.5cm">
+<column alignment="left" valignment="top" width="3.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{n =: 42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{s =: 
+\begin_inset Quotes eld
+\end_inset
+
+: n}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# s}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'answer is ' , s}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{answer is 42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+关于“格式化”的更多信息，请参考
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch19}{第十九章
+\begin_inset Quotes erd
+\end_inset
+
+}
+\end_layout
+
+\end_inset
+
+。现在让我们回到盒子上。因为盒子有矩形轮廓环绕，所以它们在屏幕上显示时像一个简单的表格。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   p =: 4 1 $ 1 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+   q =: 4 1 $ 3 0 1 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   2 3 $ ' p ' ; ' q ' ; ' p+q ' ;  p ; q ; p+q
+\end_layout
+
+\begin_layout Plain Layout
+
++---+---+-----+
+\end_layout
+
+\begin_layout Plain Layout
+
+| p | q | p+q |
+\end_layout
+
+\begin_layout Plain Layout
+
++---+---+-----+
+\end_layout
+
+\begin_layout Plain Layout
+
+|1  |3  |4    |
+\end_layout
+
+\begin_layout Plain Layout
+
+|2  |0  |2    |
+\end_layout
+
+\begin_layout Plain Layout
+
+|3  |1  |4    |
+\end_layout
+
+\begin_layout Plain Layout
+
+|4  |1  |5    |
+\end_layout
+
+\begin_layout Plain Layout
+
++---+---+-----+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+装盒和拆盒
+\end_layout
+
+\begin_layout Standard
+内置一元函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{<}
+\end_layout
+
+\end_inset
+
+（左尖括号，称为“装盒”），用来把它参数装入盒子。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   < 'baked beans'
+\end_layout
+
+\begin_layout Plain Layout
+
++-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|baked beans|
+\end_layout
+
+\begin_layout Plain Layout
+
++-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+尽管盒子中可能有一个数字，但盒子本身不是数字。想要对盒子中的值进行计算，必须“拆开”盒子，取出其中的值。一元函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>}
+\end_layout
+
+\end_inset
+
+（右尖括号）称为“拆盒子”
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="1.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{b =: < 1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{> b}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-----+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|1 2 3|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+-----+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+将
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{<}
+\end_layout
+
+\end_inset
+
+视作漏斗可能有助于理解。从宽端塞入数据，从窄端取出盒子。盒子是标量，没有维度，类似一个点。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>}
+\end_layout
+
+\end_inset
+
+则相反。既然盒子是标量，就可以用
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{,}
+\end_layout
+
+\end_inset
+
+函数将盒子连接起来，但是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{;}
+\end_layout
+
+\end_inset
+
+函数用起来更方便一些，因为它一次性完成装盒和连接。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="5.5cm">
+<column alignment="left" valignment="top" width="3.5cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(< 1 1) , (< 2 2) , (< 3 3)}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 1 ; 2 2 ; 3 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+---+---+---+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|1 1|2 2|3 3|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+---+---+---+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+---+---+---+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|1 1|2 2|3 3|}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+---+---+---+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+总结
+\end_layout
+
+\begin_layout Standard
+总之，J语言中多有的数据对象都是阵列，有着零、一或者更多的维度。一个阵列可以包含数值、字符、以及盒子（还有其他可能）。
+\end_layout
+
+\begin_layout Standard
+第二章就到这里。
+\end_layout
+
+\begin_layout Chapter
+定义函数
+\end_layout
+
+\begin_layout Standard
+J自带内置函数集，我们之前已经见过了一些，比如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+。在本章中，我们先看如何把这些内置函数通过多种方式组合在一起，来定义你自己的函数。
+\end_layout
+
+\begin_layout Section
+重命名
+\end_layout
+
+\begin_layout Standard
+定义函数最简单的方式就是给内置函数重新起一个名字。这种定义方式是一个赋值。例如，我们定义函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{square}
+\end_layout
+
+\end_inset
+
+和内置函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*:}
+\end_layout
+
+\end_inset
+
+相同：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   square =: *:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   square 1 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+1 4 9 16
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+采用这种重命名的方式可以使得函数的名字更好记一些。我们可以给同一个内置函数起不同的名字，一个表示一元操作，另一个表示二元操作。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+Ceiling =: >.
+\end_layout
+
+\begin_layout Plain Layout
+
+Max     =: >.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="3cm">
+<column alignment="left" valignment="top" width="3cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Ceiling 1.7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 Max 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+插入
+\end_layout
+
+\begin_layout Standard
+回忆一下，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(+/ 2 3 4)}
+\end_layout
+
+\end_inset
+
+表示
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(2 + 3 + 4)}
+\end_layout
+
+\end_inset
+
+，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*/ 2 3 4}
+\end_layout
+
+\end_inset
+
+表示
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 * 3 * 4}
+\end_layout
+
+\end_inset
+
+。我们可以通过赋值定义函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{sum}
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   sum =: + /
+\end_layout
+
+\begin_layout Plain Layout
+
+   sum 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+9
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在这里
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{sum =: + /}
+\end_layout
+
+\end_inset
+
+向我们展示了
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/}
+\end_layout
+
+\end_inset
+
+表达式本身是一个函数。
+\end_layout
+
+\begin_layout Standard
+表达式
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/}
+\end_layout
+
+\end_inset
+
+可以理解为：将“插入”（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+）应用于函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+，从而得到列表求和函数。
+\end_layout
+
+\begin_layout Standard
+也就是说，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+本身是一种函数，它接受一个参数位于其左侧。参数和结果都是函数。
+\end_layout
+
+\begin_layout Section
+术语：动词，操作符和副词
+\end_layout
+
+\begin_layout Standard
+我们已经见过了两种函数。第一种是“常规”函数，比如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*}
+\end_layout
+
+\end_inset
+
+，对数值进行计算并得到数值。在J中这种函数称为“动词”。
+\end_layout
+
+\begin_layout Standard
+第二种函数，比如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+，对函数进行计算并得到函数。这种函数被称为“操作符”，以区分于“动词”。
+\end_layout
+
+\begin_layout Standard
+接受一个参数的操作符称为“副词”。副词总是接受左参数。因此我们说，在表达式
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(+ /)}
+\end_layout
+
+\end_inset
+
+中，副词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+作用于动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+}
+\end_layout
+
+\end_inset
+
+从而生成列表求和函数。
+\end_layout
+
+\begin_layout Standard
+这些术语来自于英语语法：动词作用于名词，副词修改动词。
+\end_layout
+
+\begin_layout Section
+交换
+\end_layout
+
+\begin_layout Standard
+见过副词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{/}
+\end_layout
+
+\end_inset
+
+后，让我们看另一个副词。副词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{~}
+\end_layout
+
+\end_inset
+
+的作用是交换左右参数。
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'a' , 'b'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'a' ,~ 'b'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'ab'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{'ba'}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+该副词的语义是：对于二元函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+及其参数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x f~ y    表示    y f x
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+再举一个例子，动词剩余
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{|}
+\end_layout
+
+\end_inset
+
+，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 | 7}
+\end_layout
+
+\end_inset
+
+表示“7 mod 2”。我们可以定义动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{mod}
+\end_layout
+
+\end_inset
+
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   mod =: |~
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{7 mod 2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 | 7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+让我们画图来说明。首先，下面的图表示函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+作用于参数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+，产生结果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(f y)}
+\end_layout
+
+\end_inset
+
+。在图中，函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+表示为一个矩形，箭头表示输入参数或者输出结果。每个箭头上都标明了相应的表达式。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diag01.gif
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+下面的图表示二元函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+作用于参数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+，产生结果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(x f y)}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diag02.gif
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+现在我们画一幅图来表示函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f~}
+\end_layout
+
+\end_inset
+
+，它可以表示为将函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+包含在矩形内部，并将参数箭头在内部进行交叉交换。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diag03.gif
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+绑定
+\end_layout
+
+\begin_layout Standard
+假如我们要定义动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{double}
+\end_layout
+
+\end_inset
+
+表示“乘以2”，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{double x}
+\end_layout
+
+\end_inset
+
+意味着
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{x * 2}
+\end_layout
+
+\end_inset
+
+。我们可以这样定义：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   double =: * & 2
+\end_layout
+
+\begin_layout Plain Layout
+
+   double 3
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在这里，我们使用二元动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*}
+\end_layout
+
+\end_inset
+
+，通过用选定的值（这里是2）固定一个它的参数，从而生成了一个一元函数。操作符
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{&}
+\end_layout
+
+\end_inset
+
+的作用就是将函数和某个值（该值作为函数的一个参数）绑定在一起。
+\end_layout
+
+\begin_layout Standard
+该操作符的语义是：如果函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+是二元函数，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{k}
+\end_layout
+
+\end_inset
+
+是其右参数的值，那么
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   (f & k) y    表示    y f k
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+同样，我们也可以固定左参数
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   (k & f) y    表示    k f y
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+例如，假设消费税率是10%，那么通过购买价格计算消费税的函数可以定义为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   tax =: 0.10 & *
+\end_layout
+
+\begin_layout Plain Layout
+
+   tax 50
+\end_layout
+
+\begin_layout Plain Layout
+
+5
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+可以通过下图来展示函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{k&f}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diag04.gif
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+术语：连词和名词
+\end_layout
+
+\begin_layout Standard
+表达式
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*&2}
+\end_layout
+
+\end_inset
+
+可以描述为：操作符
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{&}
+\end_layout
+
+\end_inset
+
+ 是一个函数，它应用于两个参数（动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{*}
+\end_layout
+
+\end_inset
+
+和数字
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+），其结果为函数“双倍”。接受两个参数的操作符在J中称为“连词”， 因为它将两个参数连接在一起。而副词是只接受一个参数的操作符。
+\end_layout
+
+\begin_layout Standard
+J中的每个函数，不论是内置还是用户定义，都归属于以下四类中的一类：一元函数，二元函数，副词或者连词。这里我们认为诸如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{-}
+\end_layout
+
+\end_inset
+
+这样的符号表示两个动词（一个一元，一个二元）。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{-}
+\end_layout
+
+\end_inset
+
+表示：一元动词求负和二元动词减法。
+\end_layout
+
+\begin_layout Standard
+每个J中的表达式都某种类型的值。所有不是函数的值都是数据（实际是阵列，就像前几章所见）。
+\end_layout
+
+\begin_layout Standard
+在J中，数据，或者说阵列，按照英语语法类比，称为“名词”。我们称某物为名词用来强调它是动词，或者称其为阵列用来强调它具有维度。
+\end_layout
+
+\begin_layout Section
+函数组合
+\end_layout
+
+\begin_layout Section
+动词串联
+\end_layout
+
+\begin_layout Section
+小结
+\end_layout
+
+\begin_layout Chapter
+脚本和显式函数
+\end_layout
+
+\begin_layout Part
+阵列
+\end_layout
+
+\begin_layout Chapter
+构建阵列
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{ch05}{}
+\end_layout
+
+\end_inset
+
+本章主要讲述如何构建阵列。
+\end_layout
+
+\begin_layout Chapter
+索引
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{ch06}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+秩
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{ch07}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+定义函数：动词
+\end_layout
+
+\begin_layout Chapter
+动词组合
+\end_layout
+
+\begin_layout Chapter
+动词串
+\end_layout
+
+\begin_layout Chapter
+条件及其他表单
+\end_layout
+
+\begin_layout Chapter
+隐式动词总结
+\end_layout
+
+\begin_layout Chapter
+显式动词
+\end_layout
+
+\begin_layout Part
+定义函数：运算符
+\end_layout
+
+\begin_layout Chapter
+显式操作符
+\end_layout
+
+\begin_layout Chapter
+动名词
+\end_layout
+
+\begin_layout Chapter
+隐式操作符
+\end_layout
+
+\begin_layout Part
+结构化函数
+\end_layout
+
+\begin_layout Chapter
+重排列
+\end_layout
+
+\begin_layout Chapter
+应用模式
+\end_layout
+
+\begin_layout Chapter
+集合、类和关系
+\end_layout
+
+\begin_layout Part
+数值和数学函数
+\end_layout
+
+\begin_layout Chapter
+数值
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{ch19}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+数值标量函数
+\end_layout
+
+\begin_layout Chapter
+因数和多项式
+\end_layout
+
+\begin_layout Chapter
+向量和矩阵
+\end_layout
+
+\begin_layout Chapter
+微积分
+\end_layout
+
+\begin_layout Part
+名字和对象
+\end_layout
+
+\begin_layout Chapter
+名字和环境
+\end_layout
+
+\begin_layout Chapter
+面向对象编程
+\end_layout
+
+\begin_layout Part
+设施
+\end_layout
+
+\begin_layout Chapter
+脚本文件
+\end_layout
+
+\begin_layout Chapter
+显示和转换
+\end_layout
+
+\begin_layout Chapter
+数据文件
+\end_layout
+
+\begin_layout Chapter
+错误处理
+\end_layout
+
+\begin_layout Chapter
+稀疏矩阵
+\end_layout
+
+\begin_layout Chapter
+性能
+\end_layout
+
+\begin_layout Chapter
+树
+\end_layout
+
+\begin_layout Part*
+附录
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{part}{附录}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+A1：表达式求值
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{A1：表达式求值}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+A2：术语列表
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{A2：术语列表}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
