@@ -144,9 +144,8 @@ status open
  翻译：科温（
 \begin_inset CommandInset href
 LatexCommand href
-name "corwin.dong@hotmail.com"
-target "corwin.dong@hotmail.com"
-type "mailto:"
+name "https://github.com/taigua"
+target "https://github.com/taigua"
 literal "true"
 
 \end_inset
@@ -13766,6 +13765,261 @@ mintinline{j}{-}
 
 \begin_layout Section
 函数组合
+\end_layout
+
+\begin_layout Standard
+假设我们要对
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 2 3}
+\end_layout
+
+\end_inset
+
+每个元素进行平方，然后求和，也就是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(1+4+9)}
+\end_layout
+
+\end_inset
+
+（等于
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{14}
+\end_layout
+
+\end_inset
+
+）。而我们已经有了动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{sum}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{square}
+\end_layout
+
+\end_inset
+
+，那么就可以使用这两个动词：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   sum square 1 2 3
+\end_layout
+
+\begin_layout Plain Layout
+
+14
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们也可以把
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{sum}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{square}
+\end_layout
+
+\end_inset
+
+组合成一个函数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   sumsq =: sum @: square
+\end_layout
+
+\begin_layout Plain Layout
+
+   sumsq 1 2 3
+\end_layout
+
+\begin_layout Plain Layout
+
+14
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+符号
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{@:}
+\end_layout
+
+\end_inset
+
+（at colon）称为“组合”操作符，其语义是：如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+和
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{g}
+\end_layout
+
+\end_inset
+
+是动词，那么
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   (f @: g) y    表示    f (g y)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+也可以用下图表示
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diag05.gif
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
