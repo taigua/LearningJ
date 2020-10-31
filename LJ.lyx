@@ -1149,8 +1149,8 @@ end{minted}
 \end_layout
 
 \begin_layout Standard
-但是在J中，没有类似的优先级。我们可以在需要的时候使用括号。但是，J也有一个规则可以减少括号的使用，如同上面那个例子（没有括号）。这个规则就是：在没有括号的情况
-下，函数的右边都是该函数的右参数。因此对于
+但是在J语言中，没有类似的优先级。我们可以在需要的时候使用括号。但是，J也有一个规则可以减少括号的使用，如同上面那个例子（没有括号）。这个规则就是：在没有括号的
+情况下，函数的右边都是该函数的右参数。因此对于
 \begin_inset ERT
 status open
 
@@ -1295,7 +1295,7 @@ mintinline{j}{10}
 
 \end_inset
 
-——在J中可以写作：
+——在J语言中可以写作：
 \end_layout
 
 \begin_layout Standard
@@ -2217,7 +2217,7 @@ mintinline{j}{0}
 
 \end_inset
 
-表示。上面三个命题在J中表示为：
+表示。上面三个命题在J语言中表示为：
 \end_layout
 
 \begin_layout Standard
@@ -3132,7 +3132,7 @@ mintinline{j}{3}
 \end_layout
 
 \begin_layout Standard
-好了，让我们回到内置函数上。假设有一个列表，依次看着每个元素，说：“选，选，不选，选，不选”。在J中，该选择表示为
+好了，让我们回到内置函数上。假设有一个列表，依次看着每个元素，说：“选，选，不选，选，不选”。在J语言中，该选择表示为
 \begin_inset ERT
 status open
 
@@ -3574,7 +3574,7 @@ mintinline{j}{-}
 \end_layout
 
 \begin_layout Standard
-在J中，几乎所有的内置函数的正式名字都是一个或者两个字符。例如：
+在J语言中，几乎所有的内置函数的正式名字都是一个或者两个字符。例如：
 \begin_inset ERT
 status open
 
@@ -6671,7 +6671,7 @@ mintinline{j}{2}
 \end_layout
 
 \begin_layout Standard
-维数在J中被称为“秩”（Rank），所以单个数字被称为0-秩阵列，列表被称为1-秩阵列，以此类推。阵列的维度列表被称为阵列的“形”（Shape）。
+维数在J语言中被称为“秩”（Rank），所以单个数字被称为0-秩阵列，列表被称为1-秩阵列，以此类推。阵列的维度列表被称为阵列的“形”（Shape）。
 \end_layout
 
 \begin_layout Standard
@@ -12773,7 +12773,7 @@ mintinline{j}{*}
 
 \end_inset
 
-，对数值进行计算并得到数值。在J中这种函数称为“动词”。
+，对数值进行计算并得到数值。在J语言中这种函数称为“动词”。
 \end_layout
 
 \begin_layout Standard
@@ -12882,10 +12882,10 @@ mintinline{j}{~}
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12906,7 +12906,7 @@ mintinline{j}{'a' , 'b'}
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12929,7 +12929,7 @@ mintinline{j}{'a' ,~ 'b'}
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12950,7 +12950,7 @@ mintinline{j}{'ab'}
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13139,10 +13139,10 @@ end{minted}
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13163,7 +13163,7 @@ mintinline{j}{7 mod 2}
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13186,20 +13186,44 @@ mintinline{j}{2 | 7}
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-1
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-1
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13722,7 +13746,7 @@ mintinline{j}{2}
 
 \end_inset
 
-），其结果为函数“双倍”。接受两个参数的操作符在J中称为“连词”， 因为它将两个参数连接在一起。而副词是只接受一个参数的操作符。
+），其结果为函数“双倍”。接受两个参数的操作符在J语言中称为“连词”， 因为它将两个参数连接在一起。而副词是只接受一个参数的操作符。
 \end_layout
 
 \begin_layout Standard
@@ -13760,7 +13784,7 @@ mintinline{j}{-}
 \end_layout
 
 \begin_layout Standard
-在J中，数据，或者说阵列，按照英语语法类比，称为“名词”。我们称某物为名词用来强调它是动词，或者称其为阵列用来强调它具有维度。
+在J语言中，数据（或者说阵列），按照英语语法类比，称为“名词”。我们称某物为名词用来强调它是动词，或者称其为阵列用来强调它具有维度。
 \end_layout
 
 \begin_layout Section
@@ -14022,8 +14046,733 @@ end{minted}
 
 \end_layout
 
+\begin_layout Standard
+你可能会奇怪，为什么要用
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(f @: g)}
+\end_layout
+
+\end_inset
+
+来表示组合，而不是更简单的
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(f g)}
+\end_layout
+
+\end_inset
+
+。因为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(f g)}
+\end_layout
+
+\end_inset
+
+另有含义，一会儿我们就会看到。
+\end_layout
+
+\begin_layout Standard
+再举一个函数组合的例子，我们用两个函数组合来计算华氏温度到摄氏温度的转换：一个函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{s}
+\end_layout
+
+\end_inset
+
+进行减去
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{32}
+\end_layout
+
+\end_inset
+
+运算，另一个函数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{m}
+\end_layout
+
+\end_inset
+
+进行乘以
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5%9}
+\end_layout
+
+\end_inset
+
+运算。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   s       =: - & 32
+\end_layout
+
+\begin_layout Plain Layout
+
+   m       =: * & (5%9)
+\end_layout
+
+\begin_layout Plain Layout
+
+   convert =: m @: s
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{s 212}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{m s 212}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{convert 212}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{180}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{100}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{100}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+上面的例子都是具名函数的组合。我们也可以对本身是函数的表达式进行组合：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   conv =: (* & (5%9)) @: (- & 32)
+\end_layout
+
+\begin_layout Plain Layout
+
+   conv 212
+\end_layout
+
+\begin_layout Plain Layout
+
+100
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+也可以不给函数一个名字，直接应用函数表达式：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   (* & (5%9)) @: (- & 32)  212
+\end_layout
+
+\begin_layout Plain Layout
+
+100
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+上述例子展示了如何组合两个一元函数。下面我们来组合一元函数和二元函数。语义如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   x (f @: g) y    表示    f (x g y)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+举个例子，给定一列订单，要求订单的总金额（订单中每种商品的个数乘以单位价格再求和），我们可以如下操作：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   P =: 2 3    NB.
+ prices
+\end_layout
+
+\begin_layout Plain Layout
+
+   Q =: 1 100  NB.
+ quantities
+\end_layout
+
+\begin_layout Plain Layout
+
+   total =: sum @: *
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{P}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{Q}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{P * Q}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{sum P * Q}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{P total Q}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 100}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2 300}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{302}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{302}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+关于组合的更多细节，请参考
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch08}{第八章}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
 \begin_layout Section
 动词串联
+\end_layout
+
+\begin_layout Standard
+英语中，可以有这样表述“no pain, no gain.”。这是一个简练的习语，尽管构造上没有语法结构（它不是一个句子，没有主动词）但是却含义丰富。J语言也有类
+似的结构：赋予简短的特定形式（一串函数）以语义。接下来讲解这种特定形式。
+\end_layout
+
+\begin_layout Subsection
+钩（Hooks）
+\end_layout
+
+\begin_layout Subsection
+分叉（Forks）
 \end_layout
 
 \begin_layout Section
@@ -14104,6 +14853,22 @@ hypertarget{ch07}{}
 
 \begin_layout Chapter
 动词组合
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{ch08}{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
