@@ -261,6 +261,22 @@ LatexCommand tableofcontents
 基础
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{ch01}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 交互式使用
 \end_layout
@@ -14645,7 +14661,6 @@ mintinline{j}{2 3}
 \begin_inset Text
 
 \begin_layout Plain Layout
-
 \begin_inset ERT
 status open
 
@@ -14768,15 +14783,2425 @@ hyperlink{ch08}{第八章}
 \end_layout
 
 \begin_layout Subsection
-钩（Hooks）
+钩子（Hooks）
+\end_layout
+
+\begin_layout Standard
+回忆一下之前定义的动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{tax}
+\end_layout
+
+\end_inset
+
+，它计算10%的消费税：
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   tax =: 0.10 & *
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+需要支付的总金额是购买价格加上消费税，该函数可以定义为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   payable =: + tax
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果购买价格是50元，那么：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{tax 50}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{50 + tax 50}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{payable 50}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hook的语义是：如果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+是二元函数，而
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{g}
+\end_layout
+
+\end_inset
+
+是一元函数，那么对于任意参数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y}
+\end_layout
+
+\end_inset
+
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   (f g) y    表示    y f (g y)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+可以用下图来表示：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diag06.gif
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+再看一个例子，动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{<.}
+\end_layout
+
+\end_inset
+
+（floor）计算数值的整数部分，我们可以通过检测一个数值是否等于它的floor来判断它是不是一个整数。这个动词可以通过hook来表示
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(= <.)}
+\end_layout
+
+\end_inset
+
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   wholenumber =: = <.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y =: 3 2.7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{<.
+ y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{y = <.
+ y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{wholenumber y}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 2.7}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1 0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 分叉（Forks）
 \end_layout
 
+\begin_layout Standard
+一列数值的算术平均数等于其和除以元素个数。（回忆一下，一元动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+计算元素个数）
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{L =: 3 5 7 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{sum L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(sum L) % (# L)}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 5 7 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{24}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们可以通过把三个动词串起来（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+，紧跟着是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{%}
+\end_layout
+
+\end_inset
+
+，最后是
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{#}
+\end_layout
+
+\end_inset
+
+）计算算术平均数。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   mean =: sum % #
+\end_layout
+
+\begin_layout Plain Layout
+
+   mean L
+\end_layout
+
+\begin_layout Plain Layout
+
+6
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+单独把三个动词串起来叫做fork。给定一元动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{f}
+\end_layout
+
+\end_inset
+
+，二元动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{g}
+\end_layout
+
+\end_inset
+
+和一元动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{h}
+\end_layout
+
+\end_inset
+
+，对于任意参数
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{t}
+\end_layout
+
+\end_inset
+
+，fork的语义是：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   (f g h) y    表示    (f y) g (h y)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+可以用下图表示：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diag08.gif
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+再看一个fork的例子，我们通过fork
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{smallest , largest}
+\end_layout
+
+\end_inset
+
+计算一列数值的范围，中间的动词是逗号。
+\end_layout
+
+\begin_layout Standard
+回忆一下
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch01}{第一章}
+\end_layout
+
+\end_inset
+
+，一列数值的最大数可以通过动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{>./}
+\end_layout
+
+\end_inset
+
+求得。类似的，最小值可以通过动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{<./}
+\end_layout
+
+\end_inset
+
+求得。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   range =: <./ , >./
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{range L}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 5 7 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 9}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hooks和forks都是动词序列，也成为动词“串联”。关于动词串联的更多内容，请参考
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{ch09}{第九章}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
 \begin_layout Section
-小结
+完整例子
+\end_layout
+
+\begin_layout Standard
+让我们通过一个长一点儿的例子把上面这些知识都复习一遍。
+\end_layout
+
+\begin_layout Standard
+基本想法是定义一个函数来展示一列数值以及每个数值占总和的百分比。
+\end_layout
+
+\begin_layout Standard
+我一开始直接给出完整代码，方便你们按图索骥。不需要研究每一行的细节，因为我在下面会给出解释。只需要知道我们在看一段7行代码的程序，定义了动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{display}
+\end_layout
+
+\end_inset
+
+以及它的辅助函数。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   frac     =: % +/
+\end_layout
+
+\begin_layout Plain Layout
+
+   percent  =: (100 & *) @: frac
+\end_layout
+
+\begin_layout Plain Layout
+
+   round    =: <.
+ @: (+ & 0.5)
+\end_layout
+
+\begin_layout Plain Layout
+
+   comp     =: round @: percent
+\end_layout
+
+\begin_layout Plain Layout
+
+   br       =: ,.
+  ;  (,.
+ @: comp)
+\end_layout
+
+\begin_layout Plain Layout
+
+   tr       =: ('Data';'Percentages') & ,:
+\end_layout
+
+\begin_layout Plain Layout
+
+   display  =: tr @: br
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+先从简单的数据开始：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   data =: 3 1 4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+然后使用动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{display}
+\end_layout
+
+\end_inset
+
+来展示每个数值以及其占总和的百分比（对占比进行了取整操作）：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{4}
+\end_layout
+
+\end_inset
+
+占
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{8}
+\end_layout
+
+\end_inset
+
+的
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{50%}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   display data
+\end_layout
+
+\begin_layout Plain Layout
+
++----+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|Data|Percentages|
+\end_layout
+
+\begin_layout Plain Layout
+
++----+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|3   |38         |
+\end_layout
+
+\begin_layout Plain Layout
+
+|1   |13         |
+\end_layout
+
+\begin_layout Plain Layout
+
+|4   |50         |
+\end_layout
+
+\begin_layout Plain Layout
+
++----+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+首先，我们的目标是用总和去除每个数字，得到占比分数。Hook
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{(% +/)}
+\end_layout
+
+\end_inset
+
+就满足要求，将其命名为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{frac}
+\end_layout
+
+\end_inset
+
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   frac =: % +/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+然后看看
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{frac}
+\end_layout
+
+\end_inset
+
+效果：
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/ data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{data % (+/ data)}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{frac data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 1 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{8}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0.375 0.125 0.5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0.375 0.125 0.5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+百分比通过将占比分数乘以100得到。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   percent =: (100 & *) @: frac
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{frac data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{percent data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 1 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0.375 0.125 0.5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{37.5 12.5 50}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+然后对百分数进行取整操作，给每个数值加上
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0.5}
+\end_layout
+
+\end_inset
+
+，然后用动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{<.}
+\end_layout
+
+\end_inset
+
+进行floor操作。动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{round}
+\end_layout
+
+\end_inset
+
+定义为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   round =: <.
+ @: (+&0.5)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+接着是动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{comp}
+\end_layout
+
+\end_inset
+
+，计算要展示的数据：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   comp =: round @: percent
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{percent data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{round percent data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{comp data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{37.5 12.5 50}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{38 13 50}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{38 13 50}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+现在我们想要把数据以及其百分比进行列式展示。我们可以通过内置动词
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{,.}
+\end_layout
+
+\end_inset
+
+（逗号和点，称为“解开元素”）将列表转换为只有一列的表格。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="3cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{,.
+ data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{,.
+ comp data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3 1 4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{38}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{13}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{51}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -14872,7 +17297,23 @@ hypertarget{ch08}{}
 \end_layout
 
 \begin_layout Chapter
-动词串
+动词串联
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{ch09}{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
