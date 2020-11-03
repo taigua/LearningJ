@@ -18105,6 +18105,529 @@ hyperlink{ch13}{第十三章}
 脚本和显式函数
 \end_layout
 
+\begin_layout Standard
+脚本就是一段J程序，用来完成某个计算。本章讨论脚本，通过脚本定义的函数以及文件中的脚本。
+\end_layout
+
+\begin_layout Section
+文本
+\end_layout
+
+\begin_layout Standard
+先看一段代码，对变量
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{txt}
+\end_layout
+
+\end_inset
+
+进行赋值：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   txt =: 0 : 0
+\end_layout
+
+\begin_layout Plain Layout
+
+What is called a "script" is
+\end_layout
+
+\begin_layout Plain Layout
+
+a sequence of lines of J.
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+表达式
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 : 0}
+\end_layout
+
+\end_inset
+
+含义是“如下”，也就是说，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{0 : 0}
+\end_layout
+
+\end_inset
+
+是一个函数，该函数接受一个参数，并把参数直接作为计算结果。参数从下一行开始，直到遇见以单独右括号开始的行结束。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{txt}
+\end_layout
+
+\end_inset
+
+的值就是包含那两行内容的字符串。字符串包含换行符（
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{LF}
+\end_layout
+
+\end_inset
+
+），所以
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{txt}
+\end_layout
+
+\end_inset
+
+打印出来分成多行。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{txt}
+\end_layout
+
+\end_inset
+
+有长度，秩为1，也就是说，是一个列表，同时包含两个换行符。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   txt
+\end_layout
+
+\begin_layout Plain Layout
+
+What is called a "script" is
+\end_layout
+
+\begin_layout Plain Layout
+
+a sequence of lines of J.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{$ txt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{# $ 55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{+/ txt = LF}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{55}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们说
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{txt}
+\end_layout
+
+\end_inset
+
+是一个“文本”变量，也就是包含0个或者多个换行的字符串。
+\end_layout
+
+\begin_layout Section
+程序脚本
+\end_layout
+
+\begin_layout Standard
+下面我们看一下计算过程，它由依序执行的程序构成。举个简单的例子，华氏温度向摄氏温度转换是一个计算过程，假定要转换华氏温度
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{T}
+\end_layout
+
+\end_inset
+
+，该过程可以分为两个步骤：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   T =: 212
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+第一步是减去32，我们把结果命名为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintintline{j}{t}
+\end_layout
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   t =: T - 32
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+第二部是将
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{t}
+\end_layout
+
+\end_inset
+
+乘以
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{j}{5%9}
+\end_layout
+
+\end_inset
+
+得到摄氏温度。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{minted}{j}
+\end_layout
+
+\begin_layout Plain Layout
+
+   t * 5 % 9
+\end_layout
+
+\begin_layout Plain Layout
+
+100
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minted}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 阵列
 \end_layout
